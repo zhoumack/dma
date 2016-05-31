@@ -1,0 +1,27 @@
+.head_font1{
+	color: #ffffff;
+    font-family: "wATCHMEn Bold","wATCHMEn";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+}
+.head_title_font{
+	color: #ffffff;
+    font-size: 20px;
+}
+#head_rightTop{
+	font-size: 13px;
+	color: #ffffff;
+}
+
+#head_rightTop p{
+	margin:0px;
+}
+#head_rightTop a{
+	float:left;
+	margin-left:5px;
+	text-decoration: none;
+	color: #ffffff;
+}

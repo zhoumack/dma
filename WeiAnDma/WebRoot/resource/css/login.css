@@ -1,0 +1,104 @@
+body {
+  margin:0px;
+  background-image:none;
+  left:auto;
+  margin-left:0;
+  margin-right:0;
+}
+#u0 {
+  width:99%;
+  height:100%;
+  margin:0px auto;
+  background-color: rgb(232,241,246)
+}
+
+#u32 {
+  background-image:url("../image/u32.png");
+  margin:0px auto;
+  width:408px;
+  height:55px;
+}
+#u33{
+	color: #ffffff;
+	margin-left:25px;
+    font-family: "wATCHMEn Bold","wATCHMEn";
+    font-size: 20px;
+    font-weight: 700;
+    height:55px;
+    float: left;
+}
+#u36 {
+  width:398px;
+  height:55px;
+  font-size:16px;
+  color:#FFFFFF;
+   white-space:nowrap;
+}
+#u36  span{
+	line-height: 55px;
+}
+
+#u2 {
+	background-image:url("../image/u2.png");
+	height: 260px;
+	width: 408px;
+	margin:0px auto;
+	margin-top: 10px;
+}
+
+#u30 {
+	height: 25px;
+	width: 382px;
+	background-image:url("../image/u30.png");
+	margin:0px auto;
+	display:block;
+	color: #3a87ad;
+    font-size: 11px;
+    text-align: left;
+}
+.u4 {
+  width:326px;
+  height:45px;
+  background-image:url("../image/u4.png");
+  margin-top:10px;
+  margin-left: auto;margin-right: auto;
+}
+#u12 {
+  width:42px;
+  height:39px;
+  background-image:url("../image/u12.jpg");
+  float:left;
+  margin-top: 3px;
+  margin-left:2px;
+}
+#u20 {
+  width:42px;
+  height:39px;
+  background-image:url("../image/u20.jpg");
+  float:left;
+  margin-top: 3px;
+  margin-left:2px;
+}
+.user{
+  border:0px;
+  padding:0px;
+  width:280px;
+  height:43px;
+  background-image:url("../image/u16.png");
+  margin-top:1px;
+}
+.checkinput{
+	  border:0px;
+ 	  padding:0px;
+ 	  background-image: url("../image/u8.png");
+ 	  width:102px;
+ 	  height:30px;
+ 	  background-color:transparent
+}
+.font{
+	color: #ffffff;
+    font-family: "Arial Negreta","Arial";
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}

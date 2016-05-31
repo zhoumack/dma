@@ -1,0 +1,38 @@
+
+.secondLi{
+	width:180px;
+	height:35px;
+	background-image: url("/WeiAnDma/resource/image/geogShow/u23.png");
+	display:block;
+	color: #ffffff;
+    font-family: "Arial Negreta","Arial";
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+     line-height: 35px;
+}
+.thirdLi{
+	width:180px;
+	height:30px;
+	background-image: url("/WeiAnDma/resource/image/geogShow/u19.png");
+	display:block;
+	text-align: left;
+	color: #2fa4e7;
+	font-family: "Arial Normal","Arial";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+ ul a{
+	text-decoration: none;
+	color: #2fa4e7;
+}
+.menudiv{
+	height:492px;
+	width:192px;
+	margin: 0 auto;
+}
+.veralign{
+	vertical-align: middle;
+}

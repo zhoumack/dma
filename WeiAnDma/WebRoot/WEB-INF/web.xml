@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+ 		<welcome-file>/views/login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+		<param-name>project_path</param-name>   <!--当前工程根路径 -->
+		<param-value>F:\\Workspaces\\MyEclipse 10\\WeiAnDma</param-value>
+	</context-param>
+
+	
+	<context-param>
+		<param-name>package_path</param-name>   <!--生成代码包根路径 -->
+		<param-value>com.zenith.wsbsdt</param-value>
+	</context-param>
+  
+  <context-param>
+		<param-name>jndi_name</param-name><!--数据源连接 jndi名称  /MySqlYz MySqlDS-->
+<!-- 		<param-value>java:jboss/datasources/OracleDMA</param-value> -->
+			<param-value>java:jboss/datasources/MySql</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>db_name</param-name><!--当前使用的数据库名称 mobiledk -->
+<!-- 		<param-value>WeiAnDma</param-value> -->
+			<param-value>dma</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>version_type</param-name>  <!--当前应用版本类型 -->
+		<param-value>debug</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>showsql</param-name>  <!--是否显示sql语句 -->
+		<param-value>true</param-value>
+	</context-param>
+	
+	<!-- 应用初始化 Servlet -->
+	<servlet>
+		<servlet-name>InitServlet</servlet-name>
+		<servlet-class>com.mobile.servlet.InitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>InitServlet</servlet-name>
+		<url-pattern>/InitServlet</url-pattern>
+	</servlet-mapping>
+
+	<!--数据查询服务 Servlet -->
+	<servlet>
+		<display-name>DataServlet</display-name>
+		<servlet-name>DataServlet</servlet-name>
+<!-- 		<servlet-class>com.mobile.servlet.DataServlet</servlet-class> -->
+<servlet-class>servlet.DataServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DataServlet</servlet-name>
+		<url-pattern>*.data</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FormServlet</servlet-name>
+		<servlet-class>com.mobile.servlet.FormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FormServlet</servlet-name>
+		<url-pattern>/FormServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--数据类生成Servlet -->
+	<servlet>
+		<servlet-name>DbServlet</servlet-name>
+		<servlet-class>com.mobile.servlet.DbServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DbServlet</servlet-name>
+		<url-pattern>/DbServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>CodeServlet</servlet-name>
+     <servlet-class>com.mobile.servlet.CodeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+    <servlet-name>CodeServlet</servlet-name>
+    <url-pattern>/CodeServlet</url-pattern>
+  </servlet-mapping>
+  
+<!--     <servlet> -->
+<!-- 	    <servlet-name>FBTestPlugin</servlet-name> -->
+<!-- 	    <servlet-class>servlet.FBTestPlugin</servlet-class> -->
+<!--     </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>FBTestPlugin</servlet-name> -->
+<!--     <url-pattern>/FBTestPlugin</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+   <servlet>
+	    <servlet-name>changJsp</servlet-name>
+	    <servlet-class>servlet.changJsp</servlet-class>
+    </servlet>
+  <servlet-mapping>
+    <servlet-name>changJsp</servlet-name>
+    <url-pattern>/changJsp</url-pattern>
+  </servlet-mapping>
+  
+  	
+  
+	
+</web-app>

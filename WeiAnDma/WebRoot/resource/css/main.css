@@ -1,0 +1,35 @@
+body {
+  margin:0px;
+  background-image:none;
+  left:auto;
+  margin-left:0;
+  margin-right:0;
+  padding:0;
+
+}
+p{
+	margin:0px;
+}
+#u0 {
+  margin:0px auto;
+}
+.body_3div{
+	float:left;
+	width:33%;
+	height:90%;
+	/*border:1px solid #000;*/
+	margin-top: 15px;
+}
+.sign{
+	color: #66ccff;
+    font-family: "ºÚÌå Bold","ºÚÌå";
+    font-size: 20px;
+    font-weight: 700;
+    vertical-align:middle;
+}
+.align{
+	vertical-align:middle;
+}
+.imgPrevDiv{
+	position: relative;top:-42%;width:229px;color: #ffffff;margin-left: auto;margin-right: auto;
+}

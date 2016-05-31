@@ -1,0 +1,16 @@
+#foot_div {
+	font-family: "Arial Normal","Arial";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    width:20%;
+    height:100%;
+    margin:auto auto;
+    color: #ffffff;
+}
+#foot_div p{
+	margin:0px auto;
+	text-align: center;
+}

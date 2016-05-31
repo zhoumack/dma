@@ -1,0 +1,5 @@
+<?xml version="1.0"  encoding="utf-8"?><root>
+<Action name="qyxx" title="企业申报">com.zenith.wsbsdt.qysb.qyxx</Action>
+<Action name="getMap" title="区域图示">com.dma.dmg.MapData</Action>
+<Action name="getInstrumentData" title="仪表数据">com.dma.dmg.deviceData</Action>
+</root>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+    <meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+    <title>百度地图API自定义地图</title>
+    <!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=BbTsVGHdcKUkNRjD9zvrgRNw"></script>
+  </head>
+  
+  <body>
+    <!--百度地图容器-->
+    <div style="width:700px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+    <p style="color:red;font-weight:600">地图生成工具基于百度地图JS api v2.0版本开发，使用请申请密匙。
+    </p>
+  </body>
+  <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(106.492905,29.535979),18);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom();
+//       map.addEventListener("mousemove", function (e) { 
+// 		 document.getElementById("mapx").innerHTML="x"+e.point.lng; 
+// 	    document.getElementById("mapy").innerHTML="y"+e.point.lat;   
+// 	    document.getElementById("level").innerHTML="z"+this.getZoom(); 
+// 	  });
+	map.addEventListener("mousemove",showInfo);
+    }
+    function showInfo(e){
+        map.removeOverlay(label);
+        var opts = {
+	      position : e.point,    // 指定文本标注所在的地理位置
+	      offset   : new BMap.Size(10,0)    //设置文本偏移量
+	    }
+        label = new BMap.Label(e.point.lng + ", " + e.point.lat, opts);  // 创建文本标注对象
+        label.setStyle({
+             color : "red",
+             fontSize : "12px",
+             height : "20px",
+             lineHeight : "20px",
+             fontFamily:"微软雅黑"
+         });
+    map.addOverlay(label); 
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var plOpts = [
+        {strokeColor:"#0ff",strokeWeight:"2",strokeOpacity:"0.6"},
+       	{strokeColor:"#00f",strokeWeight:"2",strokeOpacity:"0.6"}
+      ];
+      var plPath =[
+	        [
+	         new BMap.Point(106.491845,29.537743),
+	         new BMap.Point(106.492159,29.536572),
+	          new BMap.Point(106.492478,29.535418),
+	          new BMap.Point(106.492667,29.534491),
+	          new BMap.Point(106.492689,29.533913),
+	          new BMap.Point(106.492608,29.533544),
+	          new BMap.Point(106.491943,29.534066),
+	          new BMap.Point(106.49188,29.535241),
+	          new BMap.Point(106.491575,29.536415),
+	          new BMap.Point(106.491409,29.536816),
+	          new BMap.Point(106.491548,29.53733),
+	          new BMap.Point(106.490973,29.537224),
+	          new BMap.Point(106.490789,29.537429),
+	          new BMap.Point(106.491018,29.537566),
+	          new BMap.Point(106.491845,29.537739),
+	          new BMap.Point(106.491845,29.537739),
+	          new BMap.Point(106.491845,29.537739)
+	      ],[
+	          new BMap.Point(106.538149,29.581584),
+	          new BMap.Point(106.538904,29.581844),
+	          new BMap.Point(106.53938,29.582158),
+	          new BMap.Point(106.539897,29.583579),
+	          new BMap.Point(106.539281,29.583987),
+	          new BMap.Point(106.538801,29.58383),
+	          new BMap.Point(106.53837,29.583461),
+	          new BMap.Point(106.537988,29.583182),
+	          new BMap.Point(106.537377,29.582805),
+	          new BMap.Point(106.53708,29.582405),
+	          new BMap.Point(106.537143,29.581808),
+	          new BMap.Point(106.537399,29.581427),
+	          new BMap.Point(106.53788,29.58151),
+	          new BMap.Point(106.538136,29.58158),
+	          new BMap.Point(106.538154,29.581588),
+	          new BMap.Point(106.538154,29.581588),
+	          new BMap.Point(106.538154,29.581588)
+	      ]
+      ];
+      for(var index = 0; index < plOpts.length; index++){
+ 		var polygon= new BMap.Polygon(plPath[index],plOpts[index]);
+        map.addOverlay(polygon);
+      }
+//       var myIcon = new BMap.Icon("/WeiAnDma/resource/image/bMap/b2.png",new BMap.Size(23,25));
+//       var point = new BMap.Point(106.491845,29.537743);
+//       var marker = new BMap.Marker(point, {icon: myIcon});
+//       marker.enableDragging()
+// 	  map.addOverlay(polygon);
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+    var label=null; 
+      initMap();
+  </script>
+</html>
